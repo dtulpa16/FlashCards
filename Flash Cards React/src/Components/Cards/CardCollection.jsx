@@ -6,19 +6,27 @@ export default function CardCollection({ cardId }) {
   const { loading, data, error } = useFetch(
     `http://127.0.0.1:8000/api/collections/${cardId}/cards/`
   );
+  const handleNext = () => {
+    count < data.length - 1 ? setCount((count) => count + 1) : setCount(0);
+    setToggle(true)
+  };
+  // const handleBack=()=>{
+  //   setCount((count) => count - 1)
+  //   setToggle(true)
+  // }
   return (
     <div>
-    {console.log(data)}
-      {data && 
-        <>
+      {console.log(data)}
+      {data && (
+        <div onClick={() => setToggle(!toggle)}>
           {toggle ? (
             <h3>{data[count].word}</h3>
           ) : (
             <h3>{data[count]?.definition}</h3>
           )}
-          <button onClick={() => setCount((count) => count + 1)}>Next</button>
-        </>
-      }
+        </div>
+      )}
+      <button onClick={() => handleNext()}>Next</button>
     </div>
   );
 }
