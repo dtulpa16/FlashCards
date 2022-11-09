@@ -6,12 +6,12 @@ import SideBar from "./Components/SideBar/SideBar";
 function App() {
   const [topicId, setTopicId] = useState(1);
   return (
-    <div className="flex flex-row">
-      <div class="w-1/5 border-solid border absolute bg-indigo-400 h-full pt-48">
+    <div className="">
+      <div class="w-1/5 border-solid border absolute bg-indigo-400 h-full pt-72">
         <SideBar setTopicId={setTopicId} />
       </div>
       <div class="basis-1/5" />
-      <div class="basis-4/5">
+      <div class="left-1/3 border absolute w-1/3 h-1/3 text-center top-1/4">
         <CardCollection cardId={topicId} />
       </div>
     </div>

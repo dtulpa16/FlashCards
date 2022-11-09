@@ -10,10 +10,6 @@ export default function CardCollection({ cardId }) {
     count < data.length - 1 ? setCount((count) => count + 1) : setCount(0);
     setToggle(true)
   };
-  // const handleBack=()=>{
-  //   setCount((count) => count - 1)
-  //   setToggle(true)
-  // }
   return (
     <div>
       {console.log(data)}
