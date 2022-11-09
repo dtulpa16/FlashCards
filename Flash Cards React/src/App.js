@@ -4,6 +4,7 @@ import CardCollection from "./Components/Cards/CardCollection";
 import SideBar from "./Components/SideBar/SideBar";
 
 function App() {
+  const [topicId,setTopicId] = useState(1)
   return (
     <div className="flex flex-row">
       <div class="w-1/5 border-solid border absolute bg-indigo-400 h-full pt-48">
@@ -11,7 +12,7 @@ function App() {
       </div>
       <div class="basis-1/5"/>
       <div class="basis-4/5">
-        <CardCollection />
+        <CardCollection cardId={topicId}/>
       </div>
     </div>
   );
