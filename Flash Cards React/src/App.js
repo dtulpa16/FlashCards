@@ -11,7 +11,7 @@ function App() {
         <SideBar setTopicId={setTopicId} />
       </div>
       <div class="basis-1/5" />
-      <div class="left-1/3 border absolute w-1/3 h-1/3 text-center top-1/4">
+      <div class="left-1/3 border-2 border-black absolute w-1/3 h-1/3 text-center mt-60">
         <CardCollection cardId={topicId} />
       </div>
     </div>

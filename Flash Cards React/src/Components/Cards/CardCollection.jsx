@@ -11,10 +11,10 @@ export default function CardCollection({ cardId }) {
     setToggle(true)
   };
   return (
-    <div>
+    <div className="flex flex-col items-center">
       {console.log(data)}
       {data && (
-        <div onClick={() => setToggle(!toggle)}>
+        <div class="pt-28 text-xl font-bold cursor-pointer" onClick={() => setToggle(!toggle)}>
           {toggle ? (
             <h3>{data[count].word}</h3>
           ) : (
@@ -22,7 +22,7 @@ export default function CardCollection({ cardId }) {
           )}
         </div>
       )}
-      <button onClick={() => handleNext()}>Next</button>
+      <button class="font-semibold absolute bottom-2 rounded-sm border border-2 bg-slate-200 w-1/5 pl-4 pr-4 pt-0.5 pb-0.5 hover:bg-slate-50 transition ease-in-out delay-50 text-lg hover:border-black " onClick={() => handleNext()}>Next</button>
     </div>
   );
 }
