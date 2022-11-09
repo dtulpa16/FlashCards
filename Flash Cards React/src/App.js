@@ -6,7 +6,7 @@ import SideBar from "./Components/SideBar/SideBar";
 function App() {
   return (
     <div className="flex flex-row">
-      <div class="basis-1/5 border-solid border">
+      <div class="w-1/4 border-solid border absolute bg-indigo-400 h-full pt-48">
         <SideBar />
       </div>
       <div class="basis-1/5"/>
