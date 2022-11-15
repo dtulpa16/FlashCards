@@ -31,14 +31,17 @@ export default function EditCardModal() {
           contentLabel="Example Modal"
         >
           <div>
-            <form class="flex flex-row gap-5 pt-20">
+            <form class="flex flex-row gap-5 pt-28">
               <input
-                class="basis-1/2 text-center border"
+                class="basis-1/2 text-center border-none focus:outline-none"
                 placeholder="Hello!"
               />
-              <input class="basis-1/2 text-center border" placeholder="World" />
+              <div class="border border-solid border-zinc-600 pb-20 " />
+
+              <input class="basis-1/2 text-center border-none focus:outline-none" placeholder="World" />
             </form>
-            <button onClick={closeModal}>close</button>
+            <button type="button" onClick={closeModal}>Cancel</button>
+            <button >Update</button>
           </div>
         </Modal>
       </div>
