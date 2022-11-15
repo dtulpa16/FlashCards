@@ -10,7 +10,7 @@ export default function SideBar({setTopicId}) {
         {data &&
           data.map((el) => {
             return (
-              <div onClick={()=>setTopicId(el.id)}class="p-5 hover:bg-slate-50 transition delay-75 duration-300 ease-in-out">
+              <div onClick={()=>setTopicId(el.id)}class="p-5 hover:bg-slate-50 transition delay-55 duration-200 ease-in-out">
                 <h3 class="pl-8 font-semibold text-xl font-mono">{el.title}</h3>
               </div>
             );
