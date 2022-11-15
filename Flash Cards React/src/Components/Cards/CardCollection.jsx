@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import DeleteBtn from "../CustonBtns/DeleteBtn";
-import EditBtn from "../CustonBtns/EditBtn";
+import EditCardModal from "./EditCardModal";
 export default function CardCollection({ cardId }) {
   const [count, setCount] = useState(0);
   const [toggle, setToggle] = useState(true);
@@ -16,7 +16,7 @@ export default function CardCollection({ cardId }) {
     <div>
       <div class="flex flex-row pt-2 text-center">
         <div class="basis-1/3">
-          <EditBtn />
+          <EditCardModal />
         </div>
         <div class="basis-1/3">
           {count + 1} / {data?.length}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import CardCollection from "./Components/Cards/CardCollection";
+import EditCardModal from "./Components/Cards/EditCardModal";
 import SideBar from "./Components/SideBar/SideBar";
 
 function App() {
