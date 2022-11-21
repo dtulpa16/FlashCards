@@ -16,13 +16,13 @@ const customStyles = {
 };
 
 export default function EditCardModal(props) {
-  const { card, collectionId, title, def, refetch, open,setOpen } = props;
+  const { card, collectionId, title, def, refetch, open, setOpen } = props;
   const [word, setWord] = useState(title);
   const [definition, setDefinition] = useState(def);
 
   const closeModal = () => setOpen(false);
   const handleUpdate = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     debugger;
     requestHandler(
       `http://127.0.0.1:8000/api/collections/${collectionId}/cards/${card}/`,
@@ -30,13 +30,13 @@ export default function EditCardModal(props) {
       { word: word, definition: definition }
     );
     refetch();
+    closeModal();
   };
-  useEffect(()=>{
-    console.log(props)
-  },[])
+  useEffect(() => {
+    console.log(props);
+  }, []);
   return (
     <>
-      
       <div>
         <Modal
           isOpen={open}

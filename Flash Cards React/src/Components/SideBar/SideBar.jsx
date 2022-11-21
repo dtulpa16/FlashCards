@@ -1,7 +1,7 @@
 import React from "react";
 import useFetch from "../../hooks/useFetch";
 export default function SideBar({setTopicId}) {
-  const { loading, data, error } = useFetch(
+  const { loading, data, error, refetch } = useFetch(
     "http://127.0.0.1:8000/api/collections/"
   );
   return (
