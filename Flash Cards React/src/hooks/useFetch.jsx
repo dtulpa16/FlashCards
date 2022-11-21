@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useFetch = (url) => {
+const useFetch = (url, cardId) => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -18,7 +18,7 @@ const useFetch = (url) => {
       }
     };
     fetchData();
-  }, [url]);
+  }, [url, cardId]);
   const refetch = async () => {
     setLoading(true);
     try {

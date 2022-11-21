@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import DeleteBtn from "../CustonBtns/DeleteBtn";
 import EditCardModal from "./EditCardModal";
@@ -8,14 +8,17 @@ export default function CardCollection({ cardId }) {
   const [toggle, setToggle] = useState(true);
   const [card, setCard] = useState();
   const openModal = () => setOpen(true);
-
   const { loading, data, error, refetch } = useFetch(
-    `http://127.0.0.1:8000/api/collections/${cardId}/cards/`
+    `http://127.0.0.1:8000/api/collections/${cardId && cardId}/cards/`, cardId && cardId
   );
+  useEffect(()=>{
+    data && setCard({ word: data[0].word, description: data[0]?.definition, id:data[0]?.id })
+  },[data])
+  
   const handleNext = (title, def, id) => {
     count < data.length - 1 ? setCount((count) => count + 1) : setCount(0);
     setToggle(true);
-    setCard({ word: title, description: def, id:id });
+    count < data.length - 1 ? setCard({ word: title, description: def, id:id }) : setCard({ word: data[0].word, description: data[0]?.definition, id:data[0]?.id })
     debugger
   };
   return (
